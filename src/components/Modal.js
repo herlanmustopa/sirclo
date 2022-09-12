@@ -11,6 +11,8 @@ const Modal = ({
   name,
   height,
   weight,
+  abilities,
+  type,
 }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
@@ -22,6 +24,8 @@ const Modal = ({
           <h4>Nama: {name}</h4>
           <h4>Weight: {weight}</h4>
           <h4>Height: {height}</h4>
+          <h4>Ability: {abilities + ""}</h4>
+          <h4>Type: {type + ""}</h4>
           <CardImage front_default={front_default} />
           <button className="btn" type="button" onClick={handleClose}>
             Close

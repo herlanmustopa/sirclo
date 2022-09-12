@@ -14,6 +14,8 @@ export default function App(props) {
   const [name, setName] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
+  const [abilities, setAbilities] = useState("");
+  const [type, setType] = useState("");
 
   // const { image, name, type } = dataPokeType;
 
@@ -41,6 +43,10 @@ export default function App(props) {
         setName(datas.name);
         setHeight(datas.height);
         setWeight(datas.weight);
+        const abilities = datas.abilities.map((item) => item.ability.name);
+        const types = datas.types.map((item) => item.type.name);
+        setAbilities(abilities);
+        setType(types);
       })
       .catch((err) => {
         console.log(err);
@@ -65,15 +71,8 @@ export default function App(props) {
     setSearch(event.target.value);
     console.log(event.target.value);
   };
-  const getId = () => {
-    for (let i = 1; i <= 20; i++) {
-      // console.log(i);
-      getDataPokemonType(i);
-    }
-  };
   useEffect(() => {
     getDataPokemon();
-    getId();
   }, []);
   return (
     <>
@@ -84,6 +83,8 @@ export default function App(props) {
         name={name}
         height={height}
         weight={weight}
+        abilities={abilities}
+        type={type}
       />
       <div className="card-app col-12">
         <div className="header">
@@ -100,8 +101,6 @@ export default function App(props) {
           {data
             .filter((item, index) => {
               return item.name.toString().includes(search);
-              //   .toLowerCase()
-              //   .includes(ref.current.value.toLowerCase());
             })
             .map((item, index) => {
               return (
@@ -122,8 +121,6 @@ export default function App(props) {
               );
             })}
         </div>
-        {/* </h1> */}
-        {/* </div> */}
       </div>
     </>
   );
