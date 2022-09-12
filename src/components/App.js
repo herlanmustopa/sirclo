@@ -39,7 +39,7 @@ export default function App(props) {
         const image = datas.sprites;
         // const obj = Object.values(image);
         console.log(image.front_default);
-        setImage(image.front_default);
+        setImage(image.other.dream_world.front_default);
         setName(datas.name);
         setHeight(datas.height);
         setWeight(datas.weight);

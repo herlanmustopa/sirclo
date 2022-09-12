@@ -21,12 +21,19 @@ const Modal = ({
       <>
         <section className="modal-main">
           {children}
-          <h4>Nama: {name}</h4>
-          <h4>Weight: {weight}</h4>
-          <h4>Height: {height}</h4>
-          <h4>Ability: {abilities + ""}</h4>
-          <h4>Type: {type + ""}</h4>
-          <CardImage front_default={front_default} />
+          <div className="modal-inline">
+            <div>
+              <h4>Nama: {name}</h4>
+              <h4>Weight: {weight}</h4>
+              <h4>Height: {height}</h4>
+              <h4>Ability: {abilities + ""}</h4>
+              <h4>Type: {type + ""}</h4>
+            </div>
+            <div>
+              <CardImage front_default={front_default} />
+            </div>
+          </div>
+
           <button className="btn" type="button" onClick={handleClose}>
             Close
           </button>
