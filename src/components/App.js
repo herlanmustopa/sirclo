@@ -93,6 +93,7 @@ export default function App(props) {
             className="input"
             name="search"
             value={search}
+            placeholder="Search Pokemon"
             onChange={handleChange}
           ></input>
         </div>
