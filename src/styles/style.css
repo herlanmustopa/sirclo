@@ -108,3 +108,10 @@ img {
 .display-none {
   display: none;
 }
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}

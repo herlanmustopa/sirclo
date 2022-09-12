@@ -21,9 +21,12 @@ const Modal = ({
       <>
         <section className="modal-main">
           {children}
+          <div className="title">
+            <h1>{name}</h1>
+          </div>
           <div className="modal-inline">
             <div>
-              <h4>Nama: {name}</h4>
+              {/* <h4>Nama: {name}</h4> */}
               <h4>Weight: {weight}</h4>
               <h4>Height: {height}</h4>
               <h4>Ability: {abilities + ""}</h4>
